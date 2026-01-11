@@ -4,8 +4,8 @@ fn main(){
     println!("{}",reference_to_nothig);
 }
 
-fn dangle() -> &String {
+fn dangle() -> String {
     let s = String::from("hello") ;
 
-    &s
+    s
 }
