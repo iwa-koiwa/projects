@@ -1,13 +1,25 @@
-
-fn five(x: i32) -> i32{
-    x+5
-}
+use core::num;
 
 fn main() {
-    
-    let x =five(5);
-    println!("The number:{}",x);
+    let mut count = 0;
+    'counting_up:loop {
+        println!("The count:{}",count);
+        let mut remaining = 10;
+        loop {
+            println!("remaing:{}",remaining);
+            if remaining == 9{
+                break;
+            }
+            if count == 2 {
+                break 'counting_up;
+            }
+            remaining -= 1;
+        }
+        count +=1;
+    }
+    println!("End count is :{}",count);
 }
+
 
 // fn another_function(x:i32,s:char){
 //     println!("the value number: {}",x);
@@ -32,4 +44,6 @@ fn main() {
     // print!("{}",MAX_POINT);
     // let spaces = "   ";
     // let spaces = spaces.len();
+    //let conditon = true;
+    // let number = if conditon {5} else {6};
 //}
