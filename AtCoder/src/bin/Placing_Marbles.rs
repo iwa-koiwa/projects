@@ -1,15 +1,13 @@
 use proconio::input;
+use proconio::marker::Chars;
 
 fn main() {
     input!{
-        s1:u8,
-        s2:u8,
-        s3:u8,
+        s:Chars,
     }
-    let s = [s1,s2,s3];
     let mut output_number = 0;
     for element in s {
-        if element == 1 {
+        if element == '1' {
             output_number += 1;
         }
     }
