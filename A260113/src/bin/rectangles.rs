@@ -1,20 +1,18 @@
-struct rectangle {
+#[derive(Debug)]
+struct Rectangle {
     width:u64,
     height:u64,
 }
 
 fn main() {
-    let area2 = rectangle {
-        width:30,
-        height:50,
-    };
-
+    let rect1 = Rectangle{width:60,height:40};
+    println!("rect1 is:{:?}",rect1);
     println!(
-        "The area of the rectangle is {} square pixels.",
-        area(area2.width , area2.height),
+        "The area of the Rectangle is {} square pixels.",
+        area(&rect1),
     );
 }
 
-fn area(width:u64,height:u64)->u64{
-    width + height
+fn area(dimensions:&Rectangle)->u64{
+    dimensions.width * dimensions.height
 }
