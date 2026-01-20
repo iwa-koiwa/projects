@@ -8,10 +8,10 @@ fn main() {
 
     let ferris = r#"
 
- \\   _~^~~~~~^~_   //
-  \) /    o o    \ (/   -------------------
-    '_     -     _'     > RUSTだよー       
-    / '---------' \     -------------------
+    \\   _~/\~~~~/\~_   //
+     \) /    o o    \ (/   -------------------
+       '_     -     _'     > RUSTだよー       
+       / '---------' \     -------------------
     "#;
     println!("{}", ferris.green());
 
@@ -44,8 +44,18 @@ fn main() {
         }
 
         for day in 1..=last_day {
-            print!("{}", format!("{:>3} ", day).blue());
-
+            if day == now.day() && month == now.month() {
+                print!("{}",format!("{:>3} ",day).black().on_white());
+            }
+            else if (start_weekday + day) % 7 == 0{
+                print!("{}",format!("{:>3} ",day).cyan());
+            }
+            else if (start_weekday + day) % 7 == 1{
+                 print!("{}",format!("{:>3} ",day).purple());
+            }
+            else{
+                print!("{}", format!("{:>3} ", day).blue());
+            }
             // 土曜日で改行（開始位置からのオフセットで計算）
             if (start_weekday + day) % 7 == 0 {
                 print!("\n    "); // 次の行の左側余白
