@@ -6,7 +6,7 @@ fn main() {
     mut a : [i32; n],
     }
     let mut total = 0;
-    for i in 0..n{
+    for i in 0..=n{
         if a[i] % 2 == 1{
             break;
         }
